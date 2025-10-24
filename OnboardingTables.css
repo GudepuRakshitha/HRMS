@@ -1,0 +1,131 @@
+/* Consistent column widths and truncation for onboarding tables */
+
+/* Generic helpers */
+.table-fixed {
+  table-layout: fixed;
+}
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Unified card wrapper (title + controls + table) */
+.dashboard-card {
+  background: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  margin-bottom: 16px;
+}
+
+.dashboard-card h3 {
+  margin: 0 0 12px 0;
+  color: var(--color-text);
+}
+
+/* Employee/Candidate classic table container: vertical scroll inside container; header sticky */
+.dashboard-list {
+  max-height: 65vh; /* adjust per layout */
+  overflow-y: auto;
+  overflow-x: auto;
+  background: var(--color-surface);
+  border-radius: 8px;
+}
+
+.dashboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: transparent; /* let row backgrounds show (dark mode) */
+}
+
+.dashboard-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--color-surface-hover); /* keep header visible */
+  border-bottom: 2px solid #e9ecef;
+}
+
+/* Sticky first column like EmployeeList example */
+.dashboard-table thead th:first-child,
+.dashboard-table tbody td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 11; /* above cells, below header panels */
+  background: var(--color-surface);
+  box-shadow: 1px 0 0 var(--color-border);
+}
+
+[data-theme="dark"] .dashboard-table thead th:first-child,
+[data-theme="dark"] .dashboard-table tbody td:first-child {
+  background: var(--color-surface) !important;
+  box-shadow: 1px 0 0 var(--color-border) !important;
+}
+
+/* Sticky first two columns for Employee table (Email, First Name) */
+/* Define a CSS variable so we can keep left offsets in sync */
+:root {
+  --ue-email-width: 260px; /* adjust if needed to match your layout */
+}
+
+/* Ensure consistent widths */
+.dashboard-table th.ue-col-email,
+.dashboard-table td.ue-col-email { min-width: var(--ue-email-width); }
+.dashboard-table th.ue-col-first,
+.dashboard-table td.ue-col-first { min-width: 180px; }
+
+/* Email column pinned at left */
+.dashboard-table thead th.ue-col-email,
+.dashboard-table tbody td.ue-col-email {
+  position: sticky;
+  left: 0;
+  z-index: 12;
+  background: var(--color-surface);
+  box-shadow: 1px 0 0 var(--color-border);
+}
+[data-theme="dark"] .dashboard-table thead th.ue-col-email,
+[data-theme="dark"] .dashboard-table tbody td.ue-col-email {
+  background: var(--color-surface) !important;
+  box-shadow: 1px 0 0 var(--color-border) !important;
+}
+
+/* First Name column pinned next to Email, offset by email width */
+.dashboard-table thead th.ue-col-first,
+.dashboard-table tbody td.ue-col-first {
+  position: sticky;
+  left: var(--ue-email-width);
+  z-index: 12;
+  background: var(--color-surface);
+  box-shadow: 1px 0 0 var(--color-border);
+}
+[data-theme="dark"] .dashboard-table thead th.ue-col-first,
+[data-theme="dark"] .dashboard-table tbody td.ue-col-first {
+  background: var(--color-surface) !important;
+  box-shadow: 1px 0 0 var(--color-border) !important;
+}
+
+.dashboard-table th,
+.dashboard-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #f1f3f4;
+}
+
+/* View Employees (UploadEmployeeTable) column widths */
+.ue-col-email { width: 26%; }
+.ue-col-first { width: 14%; }
+.ue-col-last { width: 14%; }
+.ue-col-phone { width: 12%; }
+.ue-col-profile { width: 18%; }
+.ue-col-uploaded { width: 16%; }
+
+/* View Candidates (UploadCandidateTable / EnhancedTable) column widths */
+.uc-col-email { width: 26%; }
+.uc-col-firstName { width: 16%; }
+.uc-col-lastName { width: 16%; }
+.uc-col-phone { width: 12%; }
+.uc-col-profile { width: 18%; }
+.uc-col-uploaded { width: 12%; }
+.uc-col-status { width: 10%; }
+.uc-col-last-email { width: 12%; }

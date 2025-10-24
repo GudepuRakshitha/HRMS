@@ -1,0 +1,23 @@
+.candidate-extraction-table-container {
+  margin-top: 1rem;
+}
+
+.candidate-extraction-table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.candidate-extraction-table-container th,
+.candidate-extraction-table-container td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.candidate-extraction-table-container th {
+  background-color: #f2f2f2;
+}
+
+.candidate-extraction-table-container tr.selected {
+  background-color: #e6f7ff;
+}

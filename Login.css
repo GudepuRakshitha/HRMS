@@ -1,0 +1,128 @@
+/* --- New CSS file for the redesigned login page --- */
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #ffffff; /* Simple white background */
+}
+
+.login-content {
+  width: 100%;
+  max-width: 360px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-logo {
+  height: 80px;
+  margin-bottom: 24px;
+}
+
+.login-title {
+  color: #212529; /* Dark text color */
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+}
+
+.login-subtitle {
+  color: #6c757d; /* Grey text color */
+  font-size: 16px;
+  margin: 0 0 30px 0;
+}
+
+.login-form {
+  width: 100%;
+}
+
+.input-group {
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  color: #495057; /* Dark label color */
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 16px;
+  color: #212529; /* Dark input text color */
+  background-color: #f8f9fa; /* Light grey background for input */
+  border: 1px solid #ced4da; /* Grey border */
+  border-radius: 8px;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.input-group input::placeholder {
+  color: #6c757d;
+}
+
+.forgot-password-link {
+  display: block;
+  text-align: right;
+  margin-top: 8px;
+  font-size: 14px;
+  color: #0d6efd; /* Blue link color */
+  text-decoration: none;
+}
+
+.forgot-password-link:hover {
+  text-decoration: underline;
+}
+
+.btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn-primary {
+  background-color: #0d6efd;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #e9ecef; /* Light grey button */
+  color: #333;
+  border: 1px solid #ced4da;
+}
+
+/* This .auth-error class is used by Login.js, so we need it here */
+.auth-error {
+  width: 100%;
+  background-color: #f8d7da; /* Light red for error */
+  color: #721c24; /* Dark red text */
+  border: 1px solid #f5c6cb;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
